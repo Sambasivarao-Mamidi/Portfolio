@@ -1,0 +1,296 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #E6E6E6; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.page-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+}
+
+.sidebar-top {
+    height: 35vh;
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.profile-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.sidebar-bottom {
+    height: 65vh;
+    background-color: #F2B824;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1A1A1B;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.right-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    background-color: transparent; 
+}
+
+.nav-line {
+    width: 1px;
+    height: 80px; 
+    background-color: #1A1A1B;
+    margin: 20px 0;
+    opacity: 0.3;
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #F2B824;
+    background-color: transparent;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.nav-item img {
+    width: 18px;
+    height: 18px;
+    opacity: 1; 
+    filter: brightness(0);
+    transition: 0.3s;
+}
+
+.nav-item:hover, .nav-item.active:hover {
+    background-color: #F2B824;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(242, 184, 36, 0.5);
+}
+
+.nav-item.active {
+    background-color: #F2B824;
+    box-shadow: none;
+}
+
+.nav-item::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background-color: #1A1A1B;
+    color: #F2B824;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    right: 47px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #1A1A1B;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover::before, .nav-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+.main-content {
+    margin-left: 280px; 
+    margin-right: 80px; 
+    width: calc(100% - 360px);
+    padding: 60px 50px; 
+    background-color: #E6E6E6;
+    min-height: 100vh;
+    /* Center content vertically and horizontally for this page */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.section-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+/* Center Header specifically for this layout */
+.center-header { justify-content: center; }
+.dash { width: 40px; height: 3px; background-color: #333; }
+.section-header h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; color: #333; font-weight: 700; margin: 0; }
+
+
+.contact-intro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Container for the three horizontal items */
+.contact-row-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Space between items */
+    flex-wrap: wrap; /* Allows stacking on small screens */
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Individual Contact Item Card */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* The Yellow Circle Icon */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #F2B824;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(242, 184, 36, 0.3);
+    transition: 0.3s;
+}
+
+.contact-card:hover .icon-circle {
+    transform: translateY(-5px);
+}
+
+.icon-circle img {
+    width: 28px;
+    filter: brightness(0); /* Make icon black */
+}
+
+/* Titles (Email, Phone, Location) */
+.contact-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: #1A1A1B;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Details Text */
+.contact-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin: 5px 0;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Footer Message */
+.contact-footer {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .sidebar { position: relative; height: auto; width: 100%; }
+    .sidebar-top { height: 250px; }
+    .sidebar-bottom { height: auto; padding: 30px 0; }
+    
+    .main-content {
+        margin-left: 0; margin-right: 0; width: 100%;
+        padding: 60px 30px;
+    }
+    
+    .contact-row-container {
+        gap: 40px;
+    }
+}
