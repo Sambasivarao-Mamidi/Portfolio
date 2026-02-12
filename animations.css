@@ -1,0 +1,94 @@
+/* ---------------------------------------------------- */
+/* Cursor Blink Animation */
+/* ---------------------------------------------------- */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: #F2B824;
+    animation: blink 0.7s infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 4px;
+    /* Small gap from text */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* Active Navigation Highlight */
+/* ---------------------------------------------------- */
+.nav-item.active {
+    filter: drop-shadow(0 0 5px rgba(242, 184, 36, 0.5));
+    border-left: 2px solid #F2B824;
+    /* Add border to make it pop */
+}
+
+/* ---------------------------------------------------- */
+/* Scroll Reveal Animation */
+/* ---------------------------------------------------- */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-20px);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Specific elements to control delay (optional) */
+.hidden:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.hidden:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.hidden:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+/* ---------------------------------------------------- */
+/* Layout Fixes */
+/* ---------------------------------------------------- */
+.badge-row {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    /* Moved margin from .badge to container */
+    flex-wrap: wrap;
+    /* Ensure it behaves well on small screens */
+}
+
+.badge-row .badge {
+    margin-top: 0 !important;
+    /* Override original margin */
+    margin-right: 0;
+    /* Let cursor check handle spacing */
+}
+
+/* Mobile Adjustment for badge row */
+@media (max-width: 480px) {
+    .badge-row {
+        justify-content: center;
+        /* Center align on mobile */
+        margin-top: 15px;
+        /* Match mobile margin */
+    }
+}

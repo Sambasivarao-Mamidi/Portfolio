@@ -1,129 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Sambasivarao</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Oswald:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="animations.css"> <!-- New Animations CSS -->
 </head>
+
 <body>
 
-<div class="page-container">
-    
-    <!-- Hamburger Menu Button (Mobile only) -->
-    <button class="hamburger-menu" id="hamburgerBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    
-    <div class="sidebar" id="sidebarMenu">
-        <div class="sidebar-top">
-            <div class="profile-circle">
-                <img src="images/Prime.jpeg" alt="Profile">
+    <div class="page-container">
+
+        <!-- Hamburger Menu Button (Mobile only) -->
+        <button class="hamburger-menu" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="sidebar" id="sidebarMenu">
+            <div class="sidebar-top">
+                <div class="profile-circle">
+                    <img src="images/Prime.jpeg" alt="Profile">
+                </div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <nav class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="About-Me.html">ABOUT ME</a>
+                    <a href="resume.html">RESUME</a>
+                    <a href="Portfolio.html">PORTFOLIO</a>
+                    <a href="certifications.html">AWARDS</a>
+                    <a href="contact.html" class="active">CONTACT</a>
+                </nav>
             </div>
         </div>
 
-        <div class="sidebar-bottom">
-            <nav class="nav-links">
-                <a href="index.html">HOME</a>
-                <a href="About-Me.html">ABOUT ME</a>
-                <a href="resume.html">RESUME</a>
-                <a href="Portfolio.html">PORTFOLIO</a>
-                <a href="certifications.html">AWARDS</a>
-                <a href="contact.html" class="active">CONTACT</a>
-            </nav>
+        <div class="main-content contact-centered-layout">
+            <div class="section-header center-header hidden"> <!-- Added hidden class -->
+                <div class="dash"></div>
+                <h1>CONTACT</h1>
+            </div>
+
+            <p class="contact-intro hidden"> <!-- Added hidden class -->
+                Feel free to contact me!
+            </p>
+
+            <div class="contact-row-container hidden"> <!-- Added hidden class -->
+
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <img src="icons/mail.svg" alt="Email">
+                    </div>
+                    <h3>Email</h3>
+                    <p>m.samba0000@email.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <img src="icons/phone.svg" alt="Phone">
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 6309528076</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="icon-circle">
+                        <img src="icons/map-pin.svg" alt="Location">
+                    </div>
+                    <h3>Location</h3>
+                    <p>Andhra Pradesh, India</p>
+                </div>
+
+            </div>
+
+            <p class="contact-footer hidden">THANKS FOR PATIENCE!</p> <!-- Added hidden class -->
         </div>
+
+        <div class="right-nav">
+            <div class="nav-line"></div>
+            <div class="nav-icons">
+                <a href="index.html" class="nav-item" data-tooltip="HOME"><img src="icons/house.svg" alt="Home"></a>
+                <a href="About-Me.html" class="nav-item" data-tooltip="ABOUT"><img src="icons/user-round.svg"
+                        alt="About"></a>
+                <a href="resume.html" class="nav-item" data-tooltip="RESUME"><img src="icons/file-text.svg"
+                        alt="Resume"></a>
+                <a href="Portfolio.html" class="nav-item" data-tooltip="PORTFOLIO"><img
+                        src="icons/briefcase-business.svg" alt="Portfolio"></a>
+                <a href="certifications.html" class="nav-item" data-tooltip="AWARDS"><img src="icons/award.svg"
+                        alt="Certifications"></a>
+                <a href="contact.html" class="nav-item active" data-tooltip="CONTACT"><img src="icons/mail.svg"
+                        alt="Contact"></a>
+            </div>
+            <div class="nav-line"></div>
+        </div>
+
     </div>
 
-    <div class="main-content contact-centered-layout">
-        <div class="section-header center-header">
-            <div class="dash"></div>
-            <h1>CONTACT</h1>
-        </div>
+    <script>
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebarMenu = document.getElementById('sidebarMenu');
 
-        <p class="contact-intro">
-            Feel free to contact me!
-        </p>
-
-        <div class="contact-row-container">
-            
-            <div class="contact-card">
-                <div class="icon-circle">
-                    <img src="icons/mail.svg" alt="Email">
-                </div>
-                <h3>Email</h3>
-                <p>m.samba0000@email.com</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="icon-circle">
-                    <img src="icons/phone.svg" alt="Phone">
-                </div>
-                <h3>Phone</h3>
-                <p>+91 6309528076</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="icon-circle">
-                    <img src="icons/map-pin.svg" alt="Location">
-                </div>
-                <h3>Location</h3>
-                <p>Andhra Pradesh, India</p>
-            </div>
-
-        </div>
-
-        <p class="contact-footer">THANKS FOR PATIENCE!</p>
-    </div>
-
-    <div class="right-nav">
-        <div class="nav-line"></div>
-        <div class="nav-icons">
-            <a href="index.html" class="nav-item" data-tooltip="HOME"><img src="icons/house.svg" alt="Home"></a>
-            <a href="About-Me.html" class="nav-item" data-tooltip="ABOUT"><img src="icons/user-round.svg" alt="About"></a>
-            <a href="resume.html" class="nav-item" data-tooltip="RESUME"><img src="icons/file-text.svg" alt="Resume"></a>
-            <a href="Portfolio.html" class="nav-item" data-tooltip="PORTFOLIO"><img src="icons/briefcase-business.svg" alt="Portfolio"></a>
-            <a href="certifications.html" class="nav-item" data-tooltip="AWARDS"><img src="icons/award.svg" alt="Certifications"></a>
-            <a href="contact.html" class="nav-item active" data-tooltip="CONTACT"><img src="icons/mail.svg" alt="Contact"></a>
-        </div>
-        <div class="nav-line"></div>
-    </div>
-
-</div>
-
-<script>
-    // Hamburger Menu Toggle
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const sidebarMenu = document.getElementById('sidebarMenu');
-
-    if (hamburgerBtn && sidebarMenu) {
-        hamburgerBtn.addEventListener('click', function() {
-            sidebarMenu.classList.toggle('mobile-open');
-            hamburgerBtn.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        const navLinks = sidebarMenu.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                sidebarMenu.classList.remove('mobile-open');
-                hamburgerBtn.classList.remove('active');
+        if (hamburgerBtn && sidebarMenu) {
+            hamburgerBtn.addEventListener('click', function () {
+                sidebarMenu.classList.toggle('mobile-open');
+                hamburgerBtn.classList.toggle('active');
             });
-        });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.sidebar') && !event.target.closest('.hamburger-menu')) {
-                sidebarMenu.classList.remove('mobile-open');
-                hamburgerBtn.classList.remove('active');
-            }
-        });
-    }
-</script>
+            // Close menu when a link is clicked
+            const navLinks = sidebarMenu.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    sidebarMenu.classList.remove('mobile-open');
+                    hamburgerBtn.classList.remove('active');
+                });
+            });
 
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.sidebar') && !event.target.closest('.hamburger-menu')) {
+                    sidebarMenu.classList.remove('mobile-open');
+                    hamburgerBtn.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    <script src="script.js"></script> <!-- Link to JS file -->
 </body>
+
 </html>

@@ -11,33 +11,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css"> <!-- New Animations CSS -->
     <title>PORTFOLIO</title>
 </head>
 
 <body>
     <div class="side-block left-accent"></div>
     <div class="side-block right-accent"></div>
-    <section class="hero-container">
+    <section class="hero-container hidden"> <!-- Added hidden class for scroll reveal -->
         <div class="hero-content">
-            <h1 class="intro-text">HI THERE!</h1>
-            <h1 class="main-name"><span class="outline">I'M</span><span class="name">SAMBASIVARAO</span></h1>
+            <h1 class="intro-text hidden">HI THERE!</h1> <!-- Added hidden class -->
+            <h1 class="main-name hidden"><span class="outline">I'M</span><span class="name">SAMBASIVARAO</span></h1>
+            <!-- Added hidden class -->
 
-            <div class="tagline-group">
-                <h4 class="badge">FRONTEND DEVELOPER / UI-UX DESIGNER</h4>
-                <h4 class="sub-badge">READY TO HANDLE YOUR NEW PROJECT</h4>
+            <div class="tagline-group hidden"> <!-- Added hidden class -->
+                <div class="badge-row">
+                    <h4 class="badge" id="typewriter-text">FRONTEND DEVELOPER / UI-UX DESIGNER</h4>
+                    <!-- added ID for typewriter -->
+                    <span class="cursor"></span> <!-- added cursor span -->
+                </div>
+                <div>
+                    <h4 class="sub-badge">READY TO HANDLE YOUR NEW PROJECT</h4>
+                </div>
             </div>
 
-            <p class="description">
+            <p class="description hidden"> <!-- Added hidden class -->
                 Great design is more than just aesthetics—it's about how it works. As a UI/UX Designer and Frontend
                 Developer, I focus on the intersection of human psychology and technical performance. I use
                 research-driven design to solve user pain points and modern codebases to bring those solutions to life.
                 My goal is simple: to make the web a more accessible, enjoyable place for everyone.
             </p>
 
-            <button class="cta-btn" onclick="location.href='About-Me.html'">MORE ABOUT ME</button>
+            <button class="cta-btn hidden" onclick="location.href='About-Me.html'">MORE ABOUT ME</button>
+            <!-- Added hidden class -->
         </div>
 
-        <div class="hero-image-wrapper">
+        <div class="hero-image-wrapper hidden"> <!-- Added hidden class -->
             <div class="orbit-ring">
                 <a href="index.html" class="orbit-icon icon-1">
                     <img src="icons/house.svg" alt="Home">
@@ -69,6 +78,7 @@
             </div>
         </div>
     </section>
+    <script src="script.js"></script> <!-- Link to JS file -->
 </body>
 
 </html>

@@ -379,6 +379,8 @@ body {
 .btn-download {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    /* Added to center content */
     gap: 10px;
 
     background-color: #F2B824;
