@@ -1,15 +1,54 @@
 /* ========================
    1. GLOBAL RESET & LAYOUT
    ======================== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    background-color: #E6E6E6; 
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E6E6E6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+}
+
+/* ==================== HAMBURGER MENU ==================== */
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+}
+
+.hamburger-menu span {
+    width: 28px;
+    height: 3px;
+    background-color: #1A1A1B;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .page-container {
@@ -45,9 +84,14 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 8px solid #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.profile-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .sidebar-bottom {
     height: 65vh;
@@ -75,9 +119,10 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* ========================
@@ -94,13 +139,13 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    border-left: 1px solid rgba(0,0,0,0.1);
-    background-color: transparent; 
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
 }
 
 .nav-line {
     width: 1px;
-    height: 80px; 
+    height: 80px;
     background-color: #1A1A1B;
     margin: 20px 0;
     opacity: 0.3;
@@ -128,12 +173,13 @@ body {
 .nav-item img {
     width: 18px;
     height: 18px;
-    opacity: 1; 
+    opacity: 1;
     filter: brightness(0);
     transition: 0.3s;
 }
 
-.nav-item:hover, .nav-item.active:hover {
+.nav-item:hover,
+.nav-item.active:hover {
     background-color: #F2B824;
     transform: scale(1.2);
     box-shadow: 0 0 15px rgba(242, 184, 36, 0.5);
@@ -180,7 +226,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-item:hover::before, .nav-item:hover::after {
+.nav-item:hover::before,
+.nav-item:hover::after {
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(0);
@@ -190,17 +237,35 @@ body {
    4. MAIN CONTENT (Adjusted for Fixed Sidebar)
    ======================== */
 .main-content {
-    margin-left: 280px; 
-    margin-right: 80px; 
+    margin-left: 280px;
+    margin-right: 80px;
     width: calc(100% - 360px);
-    padding: 60px 50px; 
+    padding: 60px 50px;
     background-color: #E6E6E6;
     min-height: 100vh;
 }
 
-.section-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
-.dash { width: 40px; height: 3px; background-color: #333; }
-.section-header h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; text-transform: uppercase; color: #333; font-weight: 700; margin: 0; }
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.dash {
+    width: 40px;
+    height: 3px;
+    background-color: #333;
+}
+
+.section-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
 
 .section-desc {
     font-size: 1.2rem;
@@ -226,15 +291,17 @@ body {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent; /* Hidden yellow border at bottom */
+    border-bottom: 3px solid transparent;
+    /* Hidden yellow border at bottom */
 }
 
 .cert-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-bottom: 3px solid #F2B824; /* Shows yellow border on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #F2B824;
+    /* Shows yellow border on hover */
 }
 
 /* Image Area */
@@ -251,7 +318,7 @@ body {
 
 /* Placeholder styles if no image */
 .placeholder-text {
-    color: rgba(255,255,255,0.2);
+    color: rgba(255, 255, 255, 0.2);
     font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 2px;
@@ -279,7 +346,8 @@ body {
     display: block;
     font-family: 'Oswald', sans-serif;
     font-size: 0.8rem;
-    color: #F2B824; /* Yellow Highlight */
+    color: #F2B824;
+    /* Yellow Highlight */
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -321,12 +389,159 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 900px) {
-    .sidebar { position: relative; height: auto; width: 100%; }
-    .sidebar-top { height: 250px; }
-    .sidebar-bottom { height: auto; padding: 30px 0; }
-    
+    .sidebar {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .sidebar-top {
+        height: 250px;
+    }
+
+    .sidebar-bottom {
+        height: auto;
+        padding: 30px 0;
+    }
+
     .main-content {
-        margin-left: 0; margin-right: 0; width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         padding-right: 80px;
+    }
+}
+
+/* ==================== MOBILE RESPONSIVENESS ==================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-top {
+        height: 200px;
+    }
+
+    .sidebar-bottom {
+        flex-grow: 1;
+        padding: 30px 0;
+    }
+
+    .profile-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        padding: 40px 30px;
+        padding-top: 70px;
+    }
+
+    .section-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .cert-card {
+        min-height: 200px;
+    }
+
+    .right-nav {
+        display: none;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .sidebar-top {
+        height: 320px;
+    }
+
+    .sidebar-bottom {
+        padding: 20px 0;
+    }
+
+    .profile-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        padding: 8px 5px;
+    }
+
+    .main-content {
+        padding: 30px 15px;
+        padding-top: 70px;
+    }
+
+    .section-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .section-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .dash {
+        width: 30px;
+        height: 2px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cert-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+
+    .cert-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .cert-card p {
+        font-size: 0.85rem;
     }
 }

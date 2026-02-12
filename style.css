@@ -10,13 +10,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100vh; 
-    padding: 0 10%; 
+    height: 100vh;
+    padding: 0 10%;
     gap: 50px;
 }
 
 .hero-content {
-    flex: 1; 
+    flex: 1;
 }
 
 .hero-image-wrapper {
@@ -24,6 +24,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .side-block {
@@ -77,15 +78,17 @@
     text-shadow: 4px 4px 0px #1A1A1B;
     margin-right: 10px;
 }
+
 .name {
     font-family: 'Oswald', sans-serif;
-   -webkit-text-stroke: 1.5px #F2B824; 
-    color:white;                              
+    -webkit-text-stroke: 1.5px #F2B824;
+    color: white;
     font-weight: 700;
     text-shadow: 5px 5px 0px #F2B824;
 }
+
 .badge {
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #1A1A1B;
     color: #F2B824;
     display: inline-block;
@@ -95,9 +98,9 @@
     letter-spacing: 2px;
 }
 
-.sub-badge{
-    font-family:'Montserrat', sans-serif;
-    background-color:#F2B824;
+.sub-badge {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F2B824;
     color: #1A1A1B;
     display: inline-block;
     padding: 10px 27px;
@@ -180,9 +183,240 @@
     color: #1A1A1B;
 }
 
-.icon-1 { top: 2%; right: 21%; background-color: #F2B824;}
-.icon-2 { top: 16%; right: 5%; }
-.icon-3 { top: 36%; right: -3.5%; }
-.icon-4 { top: 58%; right: -3%; }
-.icon-5 { top: 78%; right: 7%; }
-.icon-6 { top: 91%; right: 24%; }
+.icon-1 {
+    top: 2%;
+    right: 21%;
+    background-color: #F2B824;
+}
+
+.icon-2 {
+    top: 16%;
+    right: 5%;
+}
+
+.icon-3 {
+    top: 36%;
+    right: -3.5%;
+}
+
+.icon-4 {
+    top: 58%;
+    right: -3%;
+}
+
+.icon-5 {
+    top: 78%;
+    right: 7%;
+}
+
+.icon-6 {
+    top: 91%;
+    right: 24%;
+}
+
+/* ==================== MOBILE RESPONSIVE ==================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 30px;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero-image-wrapper {
+        flex: 1;
+        width: 100%;
+    }
+
+    .main-name {
+        font-size: 2.5rem;
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .sub-badge {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .profile-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-ring {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .left-accent {
+        display: none;
+    }
+
+    .right-accent {
+        display: none;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero-container {
+        padding: 40px 15px 50px 15px;
+        gap: 30px;
+        min-height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .main-name {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px #F2B824;
+        text-shadow: 3px 3px 0px #F2B824;
+    }
+
+    .outline {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px #1A1A1B;
+        text-shadow: 2px 2px 0px #1A1A1B;
+    }
+
+    .name {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px #F2B824;
+        text-shadow: 3px 3px 0px #F2B824;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 5px;
+    }
+
+    .badge {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        margin-top: 15px;
+    }
+
+    .sub-badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+        margin-top: 10px;
+    }
+
+    .tagline-group {
+        margin: 15px 0;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .profile-circle {
+        width: 180px;
+        height: 180px;
+        border: 5px solid white;
+    }
+
+    .orbit-ring {
+        width: 220px;
+        height: 220px;
+        border: 2px solid #F2B824;
+    }
+
+    .orbit-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+        border: 1.5px solid #F2B824;
+    }
+
+    /* Reposition orbit icons to fit within mobile viewport */
+    .icon-1 {
+        top: -14px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .icon-2 {
+        top: 7px;
+        right: 31px;
+    }
+
+    .icon-3 {
+        top: 62px;
+        right: -9px;
+    }
+
+    .icon-4 {
+        top: 130px;
+        right: -9px;
+    }
+
+    .icon-5 {
+        top: 185px;
+        right: 31px;
+    }
+
+    .icon-6 {
+        top: 206px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+}
